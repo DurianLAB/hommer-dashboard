@@ -1,0 +1,381 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/v5/search for icons options
+
+title: "My Workspace"
+subtitle: "Welcome to Bat Cave"
+logo: "assets/icons/avatar.png"
+#icon: "fas fa-skull-crossbones" # Optional icon
+
+header: true
+
+# Optional theme customization
+theme: default
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#a2b9bc"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#ffffff"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link: "#3273dc"
+    link-hover: "#363636"
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link: "#3273dc"
+    link-hover: "#ffdd57"
+    #background-image: "/assets/bg/mancave.jpg"
+# Optional message
+message:
+  #url: https://b4bz.io
+  style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+  title: "Welcome Internet Mortal !"
+  icon: "fa fa-grin"
+  content: "Use this as portal for self-host applications. This dashboard is forked from homer dashboard."
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  #  - name: "Contribute"
+  #  icon: "fab fa-github"
+  #  url: "https://github.com/bastienwirtz/homer"
+  #  target: "_blank" # optional html a tag target attribute
+  - name: "Back to Home Page"
+    icon: "fas fa-book"
+    url: "http://blog.anpham.me"
+  # this will link to a second homer page that will load config from additional-page.yml and keep default config values as in config.yml file
+  # see url field and assets/additional-page.yml.dist used in this example:
+  #- name: "another page!"
+  #  icon: "fas fa-file-alt"
+  #  url: "#additional-page" 
+
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Speedtest"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Speedtest"
+        logo: "assets/icons/librespeed.png"
+        subtitle: "Speedtest for anpham.me"
+        tag: "tester"
+        keywords: "monitor"
+        url: "https://speedtest.anpham.me"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "Uptime"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Uptime Portal"
+        logo: "assets/icons/uptime.png"
+        subtitle: "Require credential to login"
+        tag: "app"
+        keywords: "monitor"
+        url: "https://uptime.anpham.me"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Uptime Server Status "
+        logo: "assets/icons/uptime.png"
+        subtitle: "Checking uptime of servers"
+        tag: "app"
+        keywords: "monitor"
+        url: "https://uptime.anpham.me/status/homelab"
+        target: "_blank" # optional html a tag target attribute
+
+
+  - name: "Cloud Services"
+    icon: "fas fa-cloud"
+    items:
+      - name: "Nextcloud"
+        logo: "assets/icons/nextcloud.png"
+        subtitle: "Cloud Storage"
+        tag: "app"
+        keywords: "monitor"
+        url: "https://drive.anpham.me"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Google Drive"
+        logo: "assets/icons/nextcloud.png"
+        subtitle: "Cloud Storage"
+        tag: "app"
+        keywords: "monitor"
+        url: "https://drive.google.com"
+        target: "_blank" # optional html a tag target attribute
+      - name: "One Drive"
+        logo: "assets/icons/nextcloud.png"
+        subtitle: "Cloud Storage"
+        tag: "app"
+        keywords: "monitor"
+        url: "https://onedrive.com"
+        target: "_blank" # optional html a tag target attribute
+
+
+
+ 
+  - name: "DevOps"
+    icon: "fas fa-cloud"
+    items:
+     - name: "Kanboard"
+       logo: "assets/icons/kanboard.png"
+       subtitle: "Kanboard for Project management"
+       tag: "app"
+       keywords: "kanboard"
+       url: "https://kanboard.anpham.me"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "DNS Tester"
+       logo: "assets/icons/webtools.png"
+       tag: "app"
+       keywords: "DNS"
+       url: "https://www.whatsmydns.net/"
+       target: "_blank" # optional html a tag target attribute
+
+   
+
+     - name: "Gitea"
+       logo: "assets/icons/gitea.png"
+       subtitle: "Code Reporsitory"
+       tag: "app"
+       keywords: "git"
+       url: "https://git.anpham.me/anpham"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "Trillium Notebook"
+       logo: "assets/icons/trilium.png"
+       subtitle: "Notebook"
+       tag: "app"
+       keywords: "note"
+       url: "https://trillium.anpham.me"
+       target: "_blank" # optional html a tag target attribute
+       
+ 
+     - name: "Github Main Page"
+       logo: "assets/icons/github.png"
+       subtitle: "Code Reporsitory"
+       tag: "app"
+       keywords: "git "
+       url: "https://github.com/phamduchongan93"
+       target: "_blank" # optional html a tag target attribute
+       
+    
+     - name: "Argo CD"
+       logo: "assets/icons/argocd.png"
+       subtitle: "GitOps"
+       tag: "app"
+       keywords: "ci/cd"
+       url: "https://argocd.anpham.me"
+       target: "_blank" # optional html a tag target attribute
+    
+     - name: "Jenkins Server"
+       logo: "assets/icons/jenkins.png"
+       subtitle: "Jenkins Server"
+       tag: "app"
+       keywords: "jenkins "
+       url: "https://jenkins.anpham.me/"
+       target: "_blank" # optional html a tag target attribute
+
+  - name: "SE Cources"
+    icon: "fas fa-cloud"
+    items:
+     - name: "System Architecture"
+       logo: "assets/icons/cppdirect.png"
+       subtitle: "System Architecture Portal"
+       tag: "system-engineer"
+       keywords: "work school"
+       url: "https://canvas.cpp.edu/courses/65184/modules#module_374823"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "SE 5110 Advanced Engineering Economics"
+       logo: "assets/icons/cppdirect.png"
+       subtitle: "SE cources"
+       tag: "system-engineer"
+       keywords: "work school"
+       url: "https://canvas.cpp.edu/courses/65198/modules"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "SE 5130 System Life Cycle"
+       logo: "assets/icons/cppdirect.png"
+       subtitle: "SE cources"
+       tag: "system-engineer"
+       keywords: "work school"
+       url: "https://canvas.cpp.edu/courses/77922/modules"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "SE 5100 Intro System Science"
+       logo: "assets/icons/cppdirect.png"
+       subtitle: "SE cources"
+       tag: "system-engineer"
+       keywords: "work school"
+       url: "https://canvas.cpp.edu/courses/89200"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "SE 5200 System Simulation"
+       logo: "assets/icons/cppdirect.png"
+       subtitle: "SE cources"
+       tag: "system-engineer"
+       keywords: "work school"
+       url: "https://canvas.cpp.edu/courses/89198"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "SE 5190 Operational Research"
+       logo: "assets/icons/cppdirect.png"
+       subtitle: "SE cources"
+       tag: "system-engineer"
+       keywords: "work school"
+       url: "https://canvas.cpp.edu/courses/102271"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "Handshake"
+       logo: "assets/icons/cppdirect.png"
+       subtitle: "SE cources"
+       tag: "system-engineer"
+       keywords: "work school"
+       url: "https://cpp.joinhandshake.com/stu"
+       target: "_blank" # optional html a tag target attribute
+
+  - name: "School and Office"
+    icon: "fas fa-cloud"
+    items:
+     - name: "Bronco Login "
+       logo: "assets/icons/cppdirect.png"
+       subtitle: "Bronco Direct for Student Services"
+       tag: "cpp"
+       keywords: "cpp"
+       url: "https://my.cpp.edu"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "Online Calendar"
+       logo: "assets/icons/cppdirect.png"
+       tag: "cpp"
+       keywords: "calendar"
+       url: "https://drive.anpham.me/apps/calendar/"
+       target: "_blank" # optional html a tag target attribute
+
+
+     - name: "CPP Email Service"
+       logo: "assets/icons/cppdirect.png"
+       subtitle: "CPP Email Server"
+       tag: "app work"
+       keywords: "work"
+       url: "https://outlook.office.com/mail/cpp.edu"
+       target: "_blank" # optional html a tag target attribute
+
+     - name: "AWS from CPP"
+       logo: "assets/icons/cppdirect.png"
+       tag: "AWS CPP"
+       keywords: "work"
+       url: "http://cpplogin.awsapps.com/start/"
+       target: "_blank" 
+
+     - name: "Online Webcam and Mictest"
+       logo: "assets/icons/cppdirect.png"
+       tag: "test work"
+       keywords: "work audio video"
+       url: "https://webcammictest.com"
+       target: "_blank" # optional html a tag target attribute
+
+     
+  - name: "Admin "
+    icon: "fas fa-cloud"
+    items:
+       - name: "Cloudflare Tunnel"
+         logo: "assets/icons/cloudcmd.png"
+         subtitle: "Tunneling network"
+         tag: "tunnel"
+         keywords: "tunnel"
+         url: "https://one.dash.cloudflare.com/188a04eff2f58ea564531dc246f6448e/access/tunnels"
+         target: "_blank" # optional html a tag target attribute
+
+       - name: "Router Config"
+         logo: "assets/icons/cloudcmd.png"
+         subtitle: "Unknown"
+         tag: "tunnel"
+         keywords: "tunnel"
+         url: "https://router.anpham.me"
+         target: "_blank" # optional html a tag target attribute
+
+       - name: "Grafana"
+         logo: "assets/icons/grafana.png"
+         subtitle: "Unknown"
+         tag: "monitor"
+         keywords: "tunnel"
+         url: "https://grafana.anpham.me"
+         target: "_blank" # optional html a tag target attribute
+
+
+  - name: "Archive"
+    icon: "fas fa-cloud"
+    items:
+       - name: "CPP Library"
+         logo: "assets/icons/cloudcmd.png"
+         subtitle: "Public Library"
+         tag: "library"
+         keywords: "library"
+         url: "https://libguides.library.cpp.edu/"
+         target: "_blank" # optional html a tag target attribute
+
+  - name: "Mapping and Navigation"
+    icon: "map navigation"
+    items:
+       - name: "CPP Library"
+         logo: "assets/icons/cloudcmd.png"
+         keywords: "navigation"
+         url: "https://www.magnetic-declination.com/"
+         target: "_blank" # optional html a tag target attribute
+
+
+  - name: "AI"
+    items:
+       - name: "ChatGPT"
+         tag: "AI"
+         url: "https://chatgpt.com/"
+         target: "_blank"
+
+       - name: "Team AI support Channel"
+         logo: "assets/icons/cppdirect.png"
+         tag: "cpp"
+         url: "https://teams.microsoft.com/_?culture=en-us&country=us#/conversations/19:231d122a661e42a68135c6aa230b9d38@thread.v2?ctx=chat"
+         target: "_blank" # optional html a tag target attribute
+
+  - name: "Virtual Meeting"
+    icon: "Zoom"
+    items:
+       - name: "System Simulation"
+         logo: "assets/icons/cppdirect.png"
+         tag: "zoom"
+         url: "https://cpp.zoom.us/j/88914126169"
+         target: "_blank" # optional html a tag target attribute
+
+       - name: "System Science"
+         logo: "assets/icons/cppdirect.png"
+         tag: "3142"
+         url: "https://cpp.zoom.us/j/89847290142"
+         target: "_blank" # optional html a tag target attribute
+
+  - name: "Virtual Meeting"
+    icon: "Zoom"
+    items:
+       - name: "System Simulation"
+         logo: "assets/icons/cppdirect.png"
+         tag: "zoom"
+         url: "https://cpp.zoom.us/j/88914126169"
+         target: "_blank" # optional html a tag target attribute
+
+       - name: "System Science"
+         logo: "assets/icons/cppdirect.png"
+         tag: "3142"
+         url: "https://cpp.zoom.us/j/89847290142"
+         target: "_blank" # optional html a tag target attribute
+

@@ -1,0 +1,76 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hommer
+  labels:
+    app: hommer
+spec:
+  selector:
+    matchLabels:
+      app: hommer
+  replicas: 1 # You could also consider elastic scaling for this deployment
+  template:
+    metadata:
+      labels:
+        app: hommer
+    spec:
+      containers: 
+      - name: hommer
+        image: b4bz/homer:v23.09.1
+        volumeMounts:
+        - name: assets
+          mountPath: /www/assets
+        ports:
+        - containerPort: 8080
+      volumes:
+      - name: assets
+        persistentVolumeClaim:
+          claimName: assets-claim
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: assets-claim
+  namespace: default
+spec:
+  storageClassName: manual
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: hommer-pv
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: hommer-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  hostPath:
+    path: "/home/ubuntu/hommer/assets"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hommer-dashboard
+spec:
+  selector:
+    app: hommer
+  ports:
+    - port: 82
+      targetPort: 8080
+
+
