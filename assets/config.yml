@@ -142,8 +142,13 @@ services:
        url: "https://www.whatsmydns.net/"
        target: "_blank" # optional html a tag target attribute
 
-   
-
+     - name: "Orelly Media"
+       logo: "assets/icons/webtools.png"
+       tag: "training"
+       keywords: "devops"
+       url: "https://learning.oreilly.com/home/"
+       target: "_blank" # optional html a tag target attribute
+ 
      - name: "Gitea"
        logo: "assets/icons/gitea.png"
        subtitle: "Code Reporsitory"
