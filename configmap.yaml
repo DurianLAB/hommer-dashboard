@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: homer-config
-  namespace: hommer # Ensure this matches your Homer deployment namespace
+ 
 data:
   config.yml: |
     # Homepage configuration
