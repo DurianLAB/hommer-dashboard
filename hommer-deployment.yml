@@ -25,41 +25,8 @@ spec:
         - containerPort: 8080
       volumes:
       - name: assets
-        persistentVolumeClaim:
-          claimName: assets-claim
-
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: assets-claim
-  namespace: default
-spec:
-  storageClassName: manual
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
-  volumeName: hommer-pv
-
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: hommer-pv
-  labels:
-    type: local
-spec:
-  capacity:
-    storage: 1Gi
-  accessModes:
-  - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: manual
-  hostPath:
-    path: "/home/ubuntu/hommer/assets"
+        configMap: 
+          name: homer-config
 
 ---
 apiVersion: v1
