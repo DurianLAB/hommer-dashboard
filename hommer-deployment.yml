@@ -15,19 +15,27 @@ spec:
       labels:
         app: hommer
     spec:
+      volumes:
+      - name: git-repo-volume
+        emptyDir: {}
+
+      # Define init container
+      initContainers:
+      - name: git-cloner
+        image: alpine/git:latest
+        commad: ["git", "clone", ""]
+        volumeMounts:
+        - name: git-repo-volume
+          mountpath: /repo
+
       containers: 
       - name: hommer
         image: b4bz/homer:v23.09.1
         volumeMounts:
-        - name: assets
+        - name: git-repo-volume
           mountPath: /www/assets
         ports:
         - containerPort: 8080
-      volumes:
-      - name: assets
-        configMap: 
-          name: homer-config
-
 ---
 apiVersion: v1
 kind: Service
