@@ -18,6 +18,10 @@ spec:
       - name: git-repo-volume
         emptyDir: {}
 
+      - name: config-volume
+        configMap:
+        - name: homer-config
+     
       # Define init container
       initContainers:
       - name: git-cloner
@@ -34,7 +38,11 @@ spec:
         image: b4bz/homer:v23.09.1
         volumeMounts:
         - name: git-repo-volume
-          mountPath: /repo/assets # Homer's default config directory is usually /app/config or similar, not /www. You might need to adjust this.
+          mountPath: /assets 
+
+        - name: config-volume
+          mountPath: 
+          - name: /www/assets
         ports:
         - containerPort: 8080
 ---
