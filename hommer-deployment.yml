@@ -27,10 +27,10 @@ spec:
       - name: git-cloner
         image: alpine/git:latest
 
-        command: ["git", "clone", "https://git.anpham.me/DurianLAB/Homepage-Dashboard.git", "/repo"]
+        command: ["git", "clone", "https://git.anpham.me/DurianLAB/Homepage-Dashboard.git", "/shared-git-data/Homepage-Dashboard"]
         volumeMounts:
         - name: git-repo-volume
-          mountPath: /repo/assets
+          mountPath: /shared-git-data
 
       containers:
       - name: hommer
@@ -38,6 +38,7 @@ spec:
         volumeMounts:
         - name: git-repo-volume
           mountPath: /www/assets
+          subPath: Homepage-Dashboard/assets
 #        - name: config-volume
 #          mountPath: /www/assets
         ports:
