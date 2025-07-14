@@ -33,7 +33,7 @@ spec:
         image: b4bz/homer:v23.09.1
         volumeMounts:
         - name: git-repo-volume
-          mountPath: /www/assets
+          mountPath: /www
         ports:
         - containerPort: 8080
 ---
