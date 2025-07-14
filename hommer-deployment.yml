@@ -41,8 +41,7 @@ spec:
           mountPath: /assets 
 
         - name: config-volume
-          mountPath: 
-          - name: /www/assets
+          mountPath: /www/assets
         ports:
         - containerPort: 8080
 ---
