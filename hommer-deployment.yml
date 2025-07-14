@@ -20,7 +20,7 @@ spec:
 
       - name: config-volume
         configMap:
-        - name: homer-config
+          name: homer-config
      
       # Define init container
       initContainers:
