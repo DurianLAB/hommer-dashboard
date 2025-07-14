@@ -38,7 +38,7 @@ spec:
         image: b4bz/homer:v23.09.1
         volumeMounts:
         - name: git-repo-volume
-          mountPath: /assets 
+          mountPath: /www 
 
         - name: config-volume
           mountPath: /www/assets
