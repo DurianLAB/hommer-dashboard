@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,17 +22,19 @@ spec:
       initContainers:
       - name: git-cloner
         image: alpine/git:latest
-        commad: ["git", "clone", "https://git.anpham.me/DurianLAB/Homepage-Dashboard.git", "/repo"]
+        # FIX 1: Change 'commad' to 'command'
+        command: ["git", "clone", "https://git.anpham.me/DurianLAB/Homepage-Dashboard.git", "/repo"]
         volumeMounts:
         - name: git-repo-volume
-          mountpath: /repo
+          # FIX 2: Change 'mountpath' to 'mountPath'
+          mountPath: /repo
 
-      containers: 
+      containers:
       - name: hommer
         image: b4bz/homer:v23.09.1
         volumeMounts:
         - name: git-repo-volume
-          mountPath: /www
+          mountPath: /www # Homer's default config directory is usually /app/config or similar, not /www. You might need to adjust this.
         ports:
         - containerPort: 8080
 ---
@@ -47,5 +48,3 @@ spec:
   ports:
     - port: 82
       targetPort: 8080
-
-
