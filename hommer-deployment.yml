@@ -23,7 +23,7 @@ spec:
       initContainers:
       - name: git-cloner
         image: alpine/git:latest
-        commad: ["git", "clone", ""]
+        commad: ["git", "clone", "https://git.anpham.me/DurianLAB/Homepage-Dashboard.git", "/repo"]
         volumeMounts:
         - name: git-repo-volume
           mountpath: /repo
