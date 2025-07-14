@@ -18,30 +18,28 @@ spec:
       - name: git-repo-volume
         emptyDir: {}
 
-      - name: config-volume
-        configMap:
-          name: homer-config
+#     - name: config-volume
+#        configMap:
+#         name: homer-config
      
       # Define init container
       initContainers:
       - name: git-cloner
         image: alpine/git:latest
-        # FIX 1: Change 'commad' to 'command'
+
         command: ["git", "clone", "https://git.anpham.me/DurianLAB/Homepage-Dashboard.git", "/repo"]
         volumeMounts:
         - name: git-repo-volume
-          # FIX 2: Change 'mountpath' to 'mountPath'
-          mountPath: /repo/assets/icons
+          mountPath: /repo/assets
 
       containers:
       - name: hommer
         image: b4bz/homer:v23.09.1
         volumeMounts:
         - name: git-repo-volume
-          mountPath: /www/assets/icons
-
-        - name: config-volume
           mountPath: /www/assets
+#        - name: config-volume
+#          mountPath: /www/assets
         ports:
         - containerPort: 8080
 ---
