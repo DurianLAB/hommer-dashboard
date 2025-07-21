@@ -27,7 +27,12 @@ spec:
       initContainers:
       - name: git-cloner
         image: alpine/git:latest
-        command: ["git", "clone", "https://git.anpham.me/DurianLAB/Homepage-Dashboard.git", "/shared-git-data/Homepage-Dashboard"]
+        command: 
+        - sh
+        - -c
+        - | # <--- This indicates a multi-line string. Indent the lines below it.
+          rm -rf /shared-git-data/Homepage-Dashboard && \
+          git clone https://git.anpham.me/DurianLAB/Homepage-Dashboard.git /shared-git-data/Homepage-Dashboard
         volumeMounts:
         - name: git-repo-volume
           mountPath: /shared-git-data
