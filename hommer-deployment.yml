@@ -33,9 +33,9 @@ spec:
           mountPath: /shared-git-data
         livenessProbe:
           exec:
-          command:
-          - ls
-          - /shared-git-data/Homepage-Dashboard/.git # Check for a file/directory inside the cloned repo
+            command:
+            - ls
+            - /shared-git-data/Homepage-Dashboard/.git # Check for a file/directory inside the cloned repo
           initialDelaySeconds: 5 # Wait 5 seconds before the first probe
           periodSeconds: 10     # Check every 10 seconds
           timeoutSeconds: 5     # Probe times out after 5 seconds
