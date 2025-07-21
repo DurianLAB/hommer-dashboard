@@ -14,15 +14,15 @@ spec:
       labels:
         app: hommer
     spec:
+      # This is CRUCIAL for the livenessProbe on initContainers
       restartPolicy: Always
       volumes:
       - name: git-repo-volume
         emptyDir: {}
+      # - name: config-volume
+      #   configMap:
+      #     name: homer-config
 
-#     - name: config-volume
-#        configMap:
-#         name: homer-config
-     
       # Define init container
       initContainers:
       - name: git-cloner
@@ -40,7 +40,7 @@ spec:
           periodSeconds: 10     # Check every 10 seconds
           timeoutSeconds: 5     # Probe times out after 5 seconds
           failureThreshold: 3   # After 3 failed attempts, consider the container unhealthy
-      
+
       containers:
       - name: hommer
         image: b4bz/homer:v23.09.1
@@ -48,8 +48,8 @@ spec:
         - name: git-repo-volume
           mountPath: /www/assets
           subPath: Homepage-Dashboard/assets
-#        - name: config-volume
-#          mountPath: /www/assets
+        # - name: config-volume
+        #   mountPath: /www/assets
         ports:
         - containerPort: 8080
 ---
