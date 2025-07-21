@@ -14,6 +14,7 @@ spec:
       labels:
         app: hommer
     spec:
+      restartPolicy: Always
       volumes:
       - name: git-repo-volume
         emptyDir: {}
