@@ -42,6 +42,24 @@ spec:
         #   mountPath: /www/assets
         ports:
         - containerPort: 8080
+      containers:
+      - name: hommer
+        image: b4bz/homer:v23.09.1
+        volumeMounts:
+        - name: git-repo-volume
+          mountPath: /www/assets
+          subPath: Homepage-Dashboard/assets
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        timeoutSeconds: 5
+        failureThreshold: 3
+        
 ---
 apiVersion: v1
 kind: Service
