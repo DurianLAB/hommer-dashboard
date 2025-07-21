@@ -14,16 +14,10 @@ spec:
       labels:
         app: hommer
     spec:
-      # This is CRUCIAL for the livenessProbe on initContainers
       restartPolicy: Always
       volumes:
       - name: git-repo-volume
         emptyDir: {}
-      # - name: config-volume
-      #   configMap:
-      #     name: homer-config
-
-      # Define init container
       initContainers:
       - name: git-cloner
         image: alpine/git:latest
@@ -52,7 +46,7 @@ spec:
         initialDelaySeconds: 10
         periodSeconds: 10
         timeoutSeconds: 5
-        failureThreshold: 3
+        failureThreshold: 15
         
 ---
 apiVersion: v1
