@@ -38,17 +38,6 @@ spec:
         - name: git-repo-volume
           mountPath: /www/assets
           subPath: Homepage-Dashboard/assets
-        # - name: config-volume
-        #   mountPath: /www/assets
-        ports:
-        - containerPort: 8080
-      containers:
-      - name: hommer
-        image: b4bz/homer:v23.09.1
-        volumeMounts:
-        - name: git-repo-volume
-          mountPath: /www/assets
-          subPath: Homepage-Dashboard/assets
         ports:
         - containerPort: 8080
         livenessProbe:
