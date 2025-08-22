@@ -6,7 +6,8 @@ title: "My Workspace"
 subtitle: "Welcome to Bat Cave"
 logo: "assets/icons/avatar.png"
 #icon: "fas fa-skull-crossbones" # Optional icon
-
+stylesheet:
+  - "assets/custom.css"
 header: true
 
 # Optional theme customization
