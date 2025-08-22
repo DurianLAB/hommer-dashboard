@@ -1,0 +1,9 @@
+/* Change the background color of the main header */
+.is-navbar-fixed-top {
+  background-color: #31584c !important; /* Replace with your desired color code */
+}
+
+/* Optional: change the background on hover if there's a specific hover effect */
+.is-navbar-fixed-top:hover {
+  background-color: #3f685c !important; /* A slightly different color for hover */
+}
