@@ -1,0 +1,4 @@
+# Optional custom stylesheet
+# Will load custom CSS files. Especially useful for custom icon sets.
+stylesheet:
+  - "assets/custom.css"
